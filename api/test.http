@@ -1,0 +1,25 @@
+POST http://localhost:8080/
+Content-Type: application/json
+
+{
+    "cep": "88906563"
+}
+
+###
+
+POST http://localhost:8080/
+Content-Type: application/json
+
+{
+    "cep": 11001000
+}
+
+
+###
+
+POST http://localhost:8080/
+Content-Type: application/json
+
+{
+    "cep": "88906466"
+}
