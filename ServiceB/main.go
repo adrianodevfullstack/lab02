@@ -228,7 +228,7 @@ func CepAwesomeapi(ctx context.Context, cep string) (*CepAwesomeapiResponse, err
 	if err := json.Unmarshal(body, &cepResponse); err != nil {
 		return nil, err
 	}
-	// AwesomeAPI pode retornar 200 com mensagem de erro no body para CEP inválido
+
 	if cepResponse.Cep == "" {
 		return nil, fmt.Errorf("cep not found")
 	}
@@ -240,7 +240,6 @@ func WeatherApi(ctx context.Context, latitude, longitude string) (*WeatherApiRes
 	ctx, span := tracer.Start(ctx, "WeatherApi")
 	defer span.End()
 
-	// Valida se latitude e longitude são numéricos válidos
 	if _, err := strconv.ParseFloat(latitude, 64); err != nil {
 		return nil, fmt.Errorf("invalid coordinates: %w", err)
 	}
